@@ -26,5 +26,30 @@ class Todo(db.Model):
     user_id = db.Column(db.Integer)
 
 
+@app.route('/user', methods=['GET'])
+def get_users():
+    return "<h1> Get All Users </h1> "
+
+
+@app.route('/user/<user_id>', methods=['GET'])
+def get_user(user_id):
+    return "<h1>Get  %s User</h1>" % user_id
+
+
+@app.route('/user', methods=["POST"])
+def create_user():
+    return "<h1>Create User</h1>"
+
+
+@app.route('/user/<user_id>', methods=["PUT"])
+def update_user(user_id):
+    return "<h1> Update %s User </h1>" % user_id
+
+
+@app.route('/user/<user_id>', methods=["DELETE"])
+def delete_user(user_id):
+    return "<h1> Delete %s User  </h1>" % user_id
+
+
 if __name__ == '__main__':
-    app.run(debug=true)
+    app.run(debug=True)

@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
+#import jwt
 import datetime
 from functools import wraps
 
@@ -271,4 +271,4 @@ def delete_todo(current_user, todo_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=80)
